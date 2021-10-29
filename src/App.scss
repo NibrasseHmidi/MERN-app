@@ -1,0 +1,227 @@
+.main-header {
+  background-color: #1bb334;
+  height: 90px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+  @media (min-width: 50em) {
+    height: 100px;
+  }
+  .main-header-title {
+    color: hsl(0, 0%, 100%);
+    margin: 0 auto;
+    padding: 20px 10px;
+    @media (min-width: 50em) {
+      height: 100%;
+      padding: 0;
+    }
+    h1 {
+      background-image: url("https://i.imgur.com/Y1CuxqF.png");
+      background-repeat: no-repeat;
+      color: transparent;
+      direction: ltr;
+      display: inline-block;
+      font-size: 0;
+      height: 43px;
+      margin: 0;
+      overflow: hidden;
+      text-indent: -9999px;
+      width: 130px;
+      @media (min-width: 50em) {
+        left: 30px;
+        position: absolute;
+        top: 34px;
+      }
+    }
+    span {
+      font-size: 1.25em;
+      font-weight: 200;
+      left: 150px;
+      position: absolute;
+      top: 25px;
+      @media (min-width: 50em) {
+        left: 180px;
+        top: 40px;
+      }
+    }
+  }
+  .main-header-search {
+    background-color: hsl(0, 0%, 80%);
+    background-image: url("https://i.imgur.com/zqZfaSF.png");
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    height: 60px;
+    @media (min-width: 50em) {
+      background-position: 30px center;
+      bottom: 0;
+      height: auto;
+      left: 400px;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    input {
+      background-color: transparent;
+      border: 0;
+      font-size: 1.25em;
+      font-weight: 200;
+      height: 100%;
+      outline: 0;
+      padding: 0 10px 0 50px;
+      width: 100%;
+      @media (min-width: 50em) {
+        padding: 0 160px 0 80px;
+      }
+      &::-webkit-input-placeholder {
+        color: hsl(0, 0%, 40%);
+      }
+      &:-moz-placeholder {
+        /* Firefox 18- */
+        color: hsl(0, 0%, 40%);
+      }
+      &::-moz-placeholder {
+        /* Firefox 19+ */
+        color: hsl(0, 0%, 40%);
+      }
+      &:-ms-input-placeholder {
+        color: hsl(0, 0%, 40%);
+      }
+    }
+  }
+}
+
+.section-search-results {
+  background-color: fade-out(#1bb334, 0.2);
+  height: 250px;
+  display: none;
+  overflow-y: scroll;
+  padding: 0 30px;
+  position: relative;
+
+  @media (min-width: 50em) {
+    height: 35.41vw;
+    overflow: hidden;
+    &::before {
+      content: "";
+      display: block;
+      height: 50px;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 50px;
+      left: 0;
+      position: absolute;
+      right: 0;
+    }
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .search-results-artists,
+  .search-results-videos {
+    padding: 10px 0;
+    @media (min-width: 50em) {
+      float: left;
+      height: 35.41vw;
+      overflow-y: scroll;
+      padding: 25px 0;
+    }
+  }
+  .search-results-artists {
+    @media (min-width: 50em) {
+      width: 25%;
+    }
+  }
+  .search-results-videos {
+    @media (min-width: 50em) {
+      padding-left: 100px;
+      width: 75%;
+    }
+  }
+  li {
+    color: hsl(0, 0%, 100%);
+    display: none;
+    font-size: 1.5em;
+    font-weight: 200;
+    padding: 5px 0;
+    span {
+      font-size: 0.6em;
+      font-weight: 400;
+    }
+  }
+  h2 {
+    border-bottom: 1px solid fade-out(#138025, 0.6);
+    color: hsl(0, 0%, 100%);
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    text-transform: uppercase;
+  }
+}
+
+.main-element {
+  padding-top: 147px;
+  @media (min-width: 50em) {
+    padding-top: 100px;
+  }
+}
+
+.section-feature {
+  height: 250px;
+  position: relative;
+  @media (min-width: 50em) {
+    height: 35.41vw;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    &.active {
+      opacity: 1;
+      z-index: 2;
+    }
+  }
+}
+
+// Meta
+
+*,
+*::after,
+*::before {
+}
+
+html,
+body {
+  background-color: hsl(0, 0%, 90%);
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+html,
+body,
+input,
+button {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
